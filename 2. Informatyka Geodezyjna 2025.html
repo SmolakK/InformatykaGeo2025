@@ -363,6 +363,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cwiczenia">Ćwiczenia</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagram-klas">Diagram klas</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#czym-jest-uml">1. Czym jest UML?</a></li>
 </ul>
@@ -377,6 +378,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asocjacja">3.2. Asocjacja</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregacja-slaba-zaleznosc">3.3. Agregacja (Słaba zależność)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kompozycja-silna-zaleznosc">3.4. Kompozycja (Silna zależność)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#licznosc-zaleznosci">3.5 Liczność zależności</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#podsumowanie">Podsumowanie</a></li>
 </ul>
 </li>
@@ -393,7 +395,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="informatyka-geodezyjna-2025-wprowadzenie-do-programowania-obiektowego-czesc-1">
 <h1>2. Informatyka Geodezyjna 2025 - wprowadzenie do programowania obiektowego (część 1)<a class="headerlink" href="#informatyka-geodezyjna-2025-wprowadzenie-do-programowania-obiektowego-czesc-1" title="Permalink to this heading">#</a></h1>
-<h2> Python jest językiem obiektowym </h2>
+<h2> Python jest językiem obiektowym (przypomnienie) </h2>
 <p>Języki programowania można również podzielić na:</p>
 <ul>
     <li> Strukturalne </li>
@@ -410,32 +412,24 @@ document.write(`
 <h2>Czym zatem jest klasa?</h2>
 <p><b>Klasa</b> to <i>abstrakcja</i> pewnego obiektu. Oznacza to uogólnieniony opis pewnego elementu, który zdefiniowany jest przez taką klasę poprzez określenie jego typowych <b>cech (atrybutów) i operacji (metod), które można na nim wykonać</b>. Tą samą strukturą opisujemy elementy świata rzeczywistego.</p>
 <p>Przykład obrazujący:</p>
-<p><b>Pizza</b> to abstrakcyjna klasa, którą opisujemy pewien typ dania.
+<p><b>Konto bankowe</b> to abstrakcyjna klasa, którą opisujemy pewien element systemu finansowego.
 Ma cechy (atrybuty):</p>
 <ul>
-    <li>Składniki</li>
-    <li>Sos</li>
+    <li>Stan</li>
+    <li>Właściciel</li>
 </ul>
 <p>Oraz metody:</p>
 <ul>
-    <li>Jedz</li>
-    <li>Polej oliwą</li>
+    <li>Depozty</li>
+    <li>Pobierz kwotę</li>
 </ul><h1>Instancja</h1>
 <p>To praktyczna realizacja klasy.</p>
 <p>Kontynuując przykład obrazujący:</p>
-<p>Piekąc pizzę nadajemy jej atrybuty - składniki (pieczarki, ser) i sos (pomidorowy). Wtedy otrzymujemy <b> instancję</b> klasy pizza w postaci <i>pizzy funghi</i>.</p>
-<p><b>Pizza</b> to abstrakcyjna klasa, którą opisujemy pewien typ dania.
-Ma cechy (atrybuty):</p>
-<ul>
-    <li>Składniki = [pieczarki, ser]</li>
-    <li>Sos = pomidorowy</li>
-</ul>
+<p>Tworząc nowe konto bankowe ustanawiamy instancję klasy i <em>przypisujemy</em> jej właściwości - stan i właściciela. Wtedy otrzymujemy <b> instancję</b> klasy konta banowego w postaci <i>konta (np. Marka Nowaka)</i>.</p>
 <p>Teraz możemy wywołać metodę na naszej instancji, która zdefiniowana już jest w klasie:</p>
-<p>pizza_funghi.jedz()</p>
-<img src="01-uml-base-class-and-object-explained.png"/><p>Przepis na danie jest odpowiednikiem KLASY, czyli abstrakcyjnego pojęcie określającego cechy i metody danego obiektu.</p>
-<p>Upieczona pizza hawajska (albo inna) jest odpowiednikiem INSTANCJI KLASY, czyli praktycznej realizacji klasy - nie jest abstrakcyjna, posiada cechy (atrybuty). Jest to też obiekt.</p>
-<p>Proces tworzenia obiektu z klasy nazywa się INSTANCJONOWANIEM.</p>
-<p>Poniżej drugi przykład z abstrakcyjnym pojęciem PSA:</p>
+<p>konto_marka.depozyt(1000)</p>
+<img src="01-uml-base-class-and-object-explained.png"/><p>Proces tworzenia obiektu z klasy nazywa się INSTANCJONOWANIEM.</p>
+<p>Powyżej drugi przykład z abstrakcyjnym pojęciem PSA:</p>
 <p>Abstrakcyjna klasa PIES - ma atrybuty:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Kolor
 Kolor oczu
@@ -457,7 +451,12 @@ Przyjść
 <p><em>Klasa nadrzędna</em> - Osoba, posiada atrybuty - imię, nazwisko, data urodzenia oraz metodę policz wiek</p>
 <p><em>Klasa dziedzicząca (podrzędna)</em> - Pracownik, posiada atrybuty pensja, stanowisko oraz wszystkie metody klasy nadrzędnej (imię, nazwisko, data urodzenia) oraz metody zmień pensję i policz wiek.</p>
 <p><em>Klasa IPracownik jest interfejsem</em> - jeszcze jednym elementem realizującym paradygmat programowania obiektowego - hermetyzacji/enkapsulacji - stanowi interfejs operujący na cechach pracownika, czyli jest pośrednikiem dokonującym zmiany w instancjach klasy Pracownik. Interfejs ma za zadanie kontrolować zmiany i ograniczać pożądane ingerencję w cechy instancji klas.</p>
-<p>Klasy pozwalają na realizację wszystkich czterech paradygmatów programowania obiektowego. Diagram klas UML jak powyżej może zostać przeniesiony i zaimplementowany w Pythonie.</p>
+<section id="cwiczenia">
+<h2>Ćwiczenia<a class="headerlink" href="#cwiczenia" title="Permalink to this heading">#</a></h2>
+<p>Wszystkie zadania wykonuj w webowym interfejsie <a class="reference external" href="https://app.diagrams.net/">https://app.diagrams.net/</a></p>
+<p>Utwórz nowy diagram -&gt; diagram klas. Po lewej stronie znajdują się obiekty w zakładce <em>UML</em>. To co znajduje się obecnie na diagramie można usunąć.
+Diagram można eksportować poprzez Plik -&gt; Eksportuj jako…</p>
+</section>
 <section id="diagram-klas">
 <h2>Diagram klas<a class="headerlink" href="#diagram-klas" title="Permalink to this heading">#</a></h2>
 <p>Wykorzystajmy powyższy diagram klas by zrozumieć czym są klasy i jakie są między nimi zależności</p>
@@ -477,6 +476,17 @@ Przyjść
 <li><p><strong>Druga sekcja</strong> zawiera <strong>atrybuty</strong> klasy (cechy/zmienne).</p></li>
 <li><p><strong>Trzecia sekcja</strong> zawiera <strong>metody</strong> klasy (operacje).</p></li>
 </ul>
+<p><b><u> Ćwiczenie 1 </u></b>: Stwórz diagram klasy “Geodeta”, który posiada atrybuty:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Imię
+Nazwisko
+Wiek
+</pre></div>
+</div>
+<p>oraz metody:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Pomierz
+OddajOperat
+</pre></div>
+</div>
 </section>
 <section id="modyfikatory-dostepu">
 <h3>2.2. Modyfikatory dostępu<a class="headerlink" href="#modyfikatory-dostepu" title="Permalink to this heading">#</a></h3>
@@ -486,6 +496,36 @@ Przyjść
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">-</span></code> (private)</strong> – dostępne tylko wewnątrz klasy.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">#</span></code> (protected)</strong> – dostępne w klasie i jej podklasach.</p></li>
 </ul>
+<p><b><u> Ćwiczenie 2 </u></b>: W stworzonym diagramie klas zabezpiecz atrybut “Wiek”</p>
+<p><b><u> Ćwiczenie 3 </u></b>: Stwórz nowe klasy w swoim diagramie i dodaj informację o ich typie zmiennej (jako podano w nawiasie). Uzupełnij również typy zmiennych w klasie Geodeta o takie jakie powinnny się tam znaleźć.</p>
+<p>SprzętPomiarowy</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Atrybuty:
+
+    typ (String)
+    numerSeryjny (String)
+    
+Metody:
+    skalibruj()
+    zresetuj()
+</pre></div>
+</div>
+<p>Operat</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Atrybuty:
+    numerOperatu (String)
+    dataUtworzenia (Date)
+Metody:
+    *Spróbuj stworzyć własne*
+</pre></div>
+</div>
+<p>Projekt</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Atrybuty:
+    nazwaProjektu (*Uzupełnij według uznania*)
+    lokalizacja (*Uzupełnij według uznania*)
+Metody:
+    rozpocznijProjekt()
+    zakończProjekt()
+</pre></div>
+</div>
 </section>
 </section>
 <section id="relacje-miedzy-klasami">
@@ -507,6 +547,24 @@ Przyjść
 <section id="kompozycja-silna-zaleznosc">
 <h3>3.4. Kompozycja (Silna zależność)<a class="headerlink" href="#kompozycja-silna-zaleznosc" title="Permalink to this heading">#</a></h3>
 <p>Obiekt klasy zawieranej <strong>nie może istnieć</strong> bez klasy nadrzędnej. <strong>Symbol:</strong> Wypełniony romb.</p>
+</section>
+<section id="licznosc-zaleznosci">
+<h3>3.5 Liczność zależności<a class="headerlink" href="#licznosc-zaleznosci" title="Permalink to this heading">#</a></h3>
+<p>Każda zależność opisana jest typem związku na obu końcach linii reprezentującej zależńość. Mogą to być związki:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Jeden do jednego (1 po obu stronach strzałki)
+Jeden do wielu (1 do n)
+Wielu do jednego (n do 1)
+</pre></div>
+</div>
+<p>W przypadku agregacji, zależność może wynosić 0</p>
+<p><b><u> Ćwiczenie 4 </u></b>: Narysuj zależności między klasami według następujących zasad:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Związek: Jeden Geodeta może posiadać wiele egzemplarzy SprzętPomiarowy (Agregacja 1 do n).
+
+Związek: Każdy Operat jest tworzony przez jednego Geodetę.
+
+Związek: Jeden Projekt może być realizowany przez wielu Geodetów.
+</pre></div>
+</div>
 </section>
 <section id="podsumowanie">
 <h3>Podsumowanie<a class="headerlink" href="#podsumowanie" title="Permalink to this heading">#</a></h3>
@@ -585,6 +643,7 @@ Modyfikatory dostępu regulujące dostęp do danych.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cwiczenia">Ćwiczenia</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagram-klas">Diagram klas</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#czym-jest-uml">1. Czym jest UML?</a></li>
 </ul>
@@ -599,6 +658,7 @@ Modyfikatory dostępu regulujące dostęp do danych.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asocjacja">3.2. Asocjacja</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregacja-slaba-zaleznosc">3.3. Agregacja (Słaba zależność)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kompozycja-silna-zaleznosc">3.4. Kompozycja (Silna zależność)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#licznosc-zaleznosci">3.5 Liczność zależności</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#podsumowanie">Podsumowanie</a></li>
 </ul>
 </li>
