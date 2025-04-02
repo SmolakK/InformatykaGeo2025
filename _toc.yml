@@ -4,6 +4,4 @@
 format: jb-book
 root: 1. Informatyka Geodezyjna 2025
 chapters:
-- file: 2. Informatyka Geodezyjna 2025
-- file: 3. Informatyka Geodezyjna 2025
-- file: 4. Informatyka Geodezyjna 2025
+- file: Informatyka Geodezyjna 2025 - wprowadzenie do programowania obiektowego c.d..ipynb
