@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Informatyka Geodezyjna 2025 - wprowadzenie do programowania obiektowego &#8212; Informatyka Geodezyjna 2025</title>
+    <title>Informatyka Geodezyjna 2025 - wprowadzenie do programowania obiektowego c.d. &#8212; Informatyka Geodezyjna 2025</title>
   
   
   
@@ -166,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Informatyka Geodezyjna 2025 - wprowadzenie do programowania obiektowego</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Informatyka Geodezyjna 2025 - wprowadzenie do programowania obiektowego c.d.</a></li>
 </ul>
 
     </div>
@@ -350,7 +350,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Informatyka Geodezyjna 2025 - wprowadzenie do programowania obiektowego</h1>
+    <h1>Informatyka Geodezyjna 2025 - wprowadzenie do programowania obiektowego c.d.</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -393,8 +393,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="informatyka-geodezyjna-2025-wprowadzenie-do-programowania-obiektowego">
-<h1>Informatyka Geodezyjna 2025 - wprowadzenie do programowania obiektowego<a class="headerlink" href="#informatyka-geodezyjna-2025-wprowadzenie-do-programowania-obiektowego" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="informatyka-geodezyjna-2025-wprowadzenie-do-programowania-obiektowego-c-d">
+<h1>Informatyka Geodezyjna 2025 - wprowadzenie do programowania obiektowego c.d.<a class="headerlink" href="#informatyka-geodezyjna-2025-wprowadzenie-do-programowania-obiektowego-c-d" title="Permalink to this heading">#</a></h1>
 <section id="uporzadkowanie-wiedzy-o-klasach">
 <h2>Uporządkowanie wiedzy o klasach<a class="headerlink" href="#uporzadkowanie-wiedzy-o-klasach" title="Permalink to this heading">#</a></h2>
 <p><b>Klasa</b> to <i>abstrakcja</i> pewnego obiektu. Oznacza to uogólnieniony opis pewnego elementu, który zdefiniowany jest przez taką klasę poprzez określenie jego typowych <b>cech (atrybutów) i operacji (metod), które można na nim wykonać</b>. Tą samą strukturą opisujemy elementy świata rzeczywistego.</p>
@@ -519,29 +519,19 @@ Metody dostępowe (gettery i settery) – zapewniające kontrolowany dostęp do 
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jurek</span><span class="o">.</span><span class="n">imie</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Jurek&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#pozyskaj atrybut imie</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jurek</span><span class="o">.</span><span class="n">przedstaw_sie</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Jestem Jurek Kiler&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#wykonaj metodę przedstaw_sie()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Stosujemy jednak enkapsulację:</p>
+<p>Stosujemy jednak enkapsulację. Polega ona na dodaniu znaku <code class="docutils literal notranslate"><span class="pre">_</span></code> przed definicję atrybutu:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Osoba</span><span class="p">():</span>
@@ -549,8 +539,7 @@ Metody dostępowe (gettery i settery) – zapewniające kontrolowany dostęp do 
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">imie</span><span class="p">,</span> <span class="n">nazwisko</span><span class="p">,</span> <span class="n">data_urodzenia</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_imie</span> <span class="o">=</span> <span class="n">imie</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_nazwisko</span> <span class="o">=</span> <span class="n">nazwisko</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_data_urodzenia</span> <span class="o">=</span> <span class="n">data_urodzenia</span>
+        <span class="c1">#resztę atrybutów enkapsuluj w ten sam sposób</span>
 
     <span class="k">def</span> <span class="nf">przedstaw_sie</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Jestem </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_imie</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_nazwisko</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -567,29 +556,14 @@ Metody dostępowe (gettery i settery) – zapewniające kontrolowany dostęp do 
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jurek</span><span class="o">.</span><span class="n">imie</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">Input In [9],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">jurek</span><span class="o">.</span><span class="n">imie</span>
-
-<span class="ne">AttributeError</span>: &#39;Osoba&#39; object has no attribute &#39;imie&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#pozyskaj atrybut imie</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jurek</span><span class="o">.</span><span class="n">przedstaw_sie</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Jestem Jurek Kiler&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#zastosuj metode przedstaw_sie()</span>
 </pre></div>
 </div>
 </div>
@@ -599,12 +573,7 @@ Metody dostępowe (gettery i settery) – zapewniające kontrolowany dostęp do 
 <p>Chronione atrybuty są oznaczane przez pojedynczy podkreślnik na początku nazwy. To konwencja, która sugeruje, że atrybut nie powinien być używany bezpośrednio poza klasą lub klasami dziedziczącymi. Python jednak nie blokuje dostępu do tych atrybutów — to tylko „umowna zasada”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jurek</span><span class="o">.</span><span class="n">_imie</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Jurek&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#jak pozyskać celowo ten atrybut?</span>
 </pre></div>
 </div>
 </div>
@@ -617,12 +586,18 @@ Metody dostępowe (gettery i settery) – zapewniające kontrolowany dostęp do 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Osoba</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">imie</span><span class="p">,</span> <span class="n">nazwisko</span><span class="p">,</span> <span class="n">data_urodzenia</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__imie</span> <span class="o">=</span> <span class="n">imie</span>  <span class="c1"># prywatny atrybut</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__nazwisko</span> <span class="o">=</span> <span class="n">nazwisko</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__data_urodzenia</span> <span class="o">=</span> <span class="n">data_urodzenia</span>
+        <span class="c1"># zastosuj prywatne atrybuty</span>
 
     <span class="k">def</span> <span class="nf">przedstaw_sie</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Nazywam się </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__imie</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__nazwisko</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]</span>
+    <span class="k">def</span> <span class="nf">przedstaw_sie</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
 </pre></div>
 </div>
 </div>
@@ -636,51 +611,21 @@ Metody dostępowe (gettery i settery) – zapewniające kontrolowany dostęp do 
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jurek</span><span class="o">.</span><span class="n">imie</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">Input In [28],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">jurek</span><span class="o">.</span><span class="n">imie</span>
-
-<span class="ne">AttributeError</span>: &#39;Osoba&#39; object has no attribute &#39;imie&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#pozyskaj atrybut</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jurek</span><span class="o">.</span><span class="n">_imie</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">Input In [29],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">jurek</span><span class="o">.</span><span class="n">_imie</span>
-
-<span class="ne">AttributeError</span>: &#39;Osoba&#39; object has no attribute &#39;_imie&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#sprobuj pozyskac jako prywatny</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jurek</span><span class="o">.</span><span class="n">__imie</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">Input In [30],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">jurek</span><span class="o">.</span><span class="n">__imie</span>
-
-<span class="ne">AttributeError</span>: &#39;Osoba&#39; object has no attribute &#39;__imie&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#sporbuj pozyskac jako chroniony</span>
 </pre></div>
 </div>
 </div>
@@ -709,15 +654,32 @@ Metody dostępowe (gettery i settery) – zapewniające kontrolowany dostęp do 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">nazwisko</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nazwisko</span>
-    
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">data_urodzenia</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_urodzenia</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Wywołując Jurek.imie uruchamiamy tak naprawdę naszą funkcję gettera, nie wywołujemy atrybutu. To co tak naprawdę dostajemy to kopia, można jej użyć w operacjach poza klasą, ale samego atrybutu nie można zmienić:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#pozyskaj atrybut imie</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#pozyskaj atrybut nazwisko</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#pozyskaj atrybut data urodzenia</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="problem-do-rozwiazania">
 <h3>Problem do rozwiązania<a class="headerlink" href="#problem-do-rozwiazania" title="Permalink to this heading">#</a></h3>

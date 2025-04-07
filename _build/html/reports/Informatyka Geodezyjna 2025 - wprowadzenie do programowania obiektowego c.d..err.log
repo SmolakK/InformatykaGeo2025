@@ -17,14 +17,19 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-jurek.imie
+class Osoba:
+    def __init__(self, imie, nazwisko, data_urodzenia):
+        # zastosuj prywatne atrybuty
+
+    def przedstaw_sie(self):
+        return f"Nazywam się {self.__imie} {self.__nazwisko}"
+
 ------------------
 
-[1;31m---------------------------------------------------------------------------[0m
-[1;31mAttributeError[0m                            Traceback (most recent call last)
-Input [1;32mIn [9][0m, in [0;36m<cell line: 1>[1;34m()[0m
-[1;32m----> 1[0m [43mjurek[49m[38;5;241;43m.[39;49m[43mimie[49m
+[1;36m  Input [1;32mIn [12][1;36m[0m
+[1;33m    def przedstaw_sie(self):[0m
+[1;37m    ^[0m
+[1;31mIndentationError[0m[1;31m:[0m expected an indented block
 
-[1;31mAttributeError[0m: 'Osoba' object has no attribute 'imie'
-AttributeError: 'Osoba' object has no attribute 'imie'
+IndentationError: expected an indented block (2925817064.py, line 5)
 
